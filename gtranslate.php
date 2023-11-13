@@ -1063,6 +1063,14 @@ EOT;
                             </select>
                         </td>
                     </tr>
+
+<?php
+// XTEC ************ AFEGIT - Hidden options and links to paid plans.
+// 2023.11.13 @aginard
+if (is_xtec_super_admin()) :
+// ************ FI
+?>
+
                     <tr>
                         <td class="option_name">* <?php esc_html_e('Sub-directory URL structure', 'gtranslate'); ?>:<br><code><small>https://example.com/<b>es</b>/</small></code></td>
                         <td><input id="pro_version" name="pro_version" value="1" type="checkbox" onclick="if(jQuery('#pro_version').is(':checked') && jQuery('#enterprise_version').is(':checked'))jQuery('#enterprise_version').prop('checked', false);RefreshDoWidgetCode()" onchange="RefreshDoWidgetCode()"/> <a href="https://gtranslate.io/?xyz=998#pricing" target="_blank" title="<?php esc_attr_e('If you already have a subscription, you can enable this.', 'gtranslate'); ?>" rel="noreferrer">* <?php esc_html_e('for paid plans only', 'gtranslate'); ?></a></td>
@@ -1091,6 +1099,14 @@ EOT;
                         <td class="option_name"><?php esc_html_e('Debug Email Translation', 'gtranslate'); ?>:</td>
                         <td><input id="email_translation_debug" name="email_translation_debug" value="1" type="checkbox"/></td>
                     </tr>
+
+<?php
+// XTEC ************ AFEGIT - Hidden options and links to paid plans.
+// 2023.11.13 @aginard
+endif;
+// ************ FI
+?>
+
                     <tr>
                         <td class="option_name"><?php esc_html_e('Native language names', 'gtranslate'); ?>:</td>
                         <td><input id="native_language_names" name="native_language_names" value="1" type="checkbox" onclick="RefreshDoWidgetCode()" onchange="RefreshDoWidgetCode()"/></td>
@@ -1226,6 +1242,13 @@ EOT;
             </div>
         </div>
 
+<?php
+// XTEC ************ AFEGIT - Hidden boxes in gtranslate admin page.
+// 2023.11.13 @aginard
+if (is_xtec_super_admin()) :
+// ************ FI
+?>
+
         <div id="poststuff">
             <div class="postbox">
                 <h3 id="settings"><?php esc_html_e('Custom CSS', 'gtranslate'); ?> <a href="#TB_inline?width=700&height=170&inlineId=common-customization-tips-description" title="<?php esc_attr_e('Common customizations tips'); ?>" class="thickbox" style="text-decoration:none"><span class="dashicons dashicons-editor-help"></span></a></h3>
@@ -1238,6 +1261,13 @@ EOT;
                 </div>
             </div>
         </div>
+
+<?php
+// XTEC ************ AFEGIT - Hidden boxes in gtranslate admin page.
+// 2023.11.13 @aginard
+endif;
+// ************ FI
+?>
 
         <input type="hidden" name="switcher_text_color" id="switcher_text_color_hidden" value="<?php echo $switcher_text_color; ?>" />
         <input type="hidden" name="switcher_arrow_color" id="switcher_arrow_color_hidden" value="<?php echo $switcher_arrow_color; ?>" />
@@ -1267,7 +1297,21 @@ EOT;
 
         <p class="submit"><input type="submit" class="button-primary" name="save" value="<?php esc_attr_e('Save Changes', 'gtranslate'); ?>" /></p>
 
+<?php
+// XTEC ************ AFEGIT - Hidden five stars link.
+// 2023.11.13 @aginard
+if (is_xtec_super_admin()) :
+// ************ FI
+?>
+
         <p style="margin-top:-10px;"><a target="_blank" href="https://wordpress.org/support/plugin/gtranslate/reviews/?filter=5" rel="noreferrer"><?php esc_html_e('Love GTranslate? Give us 5 stars on WordPress.org :)', 'gtranslate'); ?></a></p>
+
+<?php
+// XTEC ************ AFEGIT - Hidden five stars link.
+// 2023.11.13 @aginard
+endif;
+// ************ FI
+?>
 
         </div>
 
@@ -1368,6 +1412,13 @@ EOT;
                     </div>
                 </div>
             </div>
+
+<?php
+// XTEC ************ AFEGIT - Hidden boxes in gtranslate admin page.
+// 2023.11.13 @aginard
+if (is_xtec_super_admin()) :
+// ************ FI
+?>
 
             <div id="poststuff" class="alternative_flags_option">
                 <div class="postbox">
@@ -1473,6 +1524,14 @@ EOT;
                     </div>
                 </div>
             </div>
+
+<?php
+// XTEC ************ AFEGIT - Hidden boxes in gtranslate admin page.
+// 2023.11.13 @aginard
+endif;
+// ************ FI
+?>
+
         </div>
 
         <script><?php echo $script; ?></script>
@@ -1508,7 +1567,21 @@ EOT;
         .gt-icon-spin {animation:gt-icon-spin-animation 2s infinite linear;}
         </style>
 
+<?php
+// XTEC ************ AFEGIT - Hidden support button.
+// 2023.11.13 @aginard
+if (is_xtec_super_admin()) :
+// ************ FI
+?>
+
         <script>window.intercomSettings = {app_id: "r70azrgx", 'platform': 'wordpress', 'translate_from': '<?php echo $default_language; ?>', 'is_sub_directory': <?php echo (empty($pro_version) ? '0' : '1'); ?>, 'is_sub_domain': <?php echo (empty($enterprise_version) ? '0' : '1'); ?>};(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/r70azrgx';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
+
+<?php
+// XTEC ************ AFEGIT - Hidden support button.
+// 2023.11.13 @aginard
+endif;
+// ************ FI
+?>
 
         <?php
     }
@@ -1695,16 +1768,7 @@ EOT;
         $data['custom_css'] = isset($data['custom_css']) ? $data['custom_css'] : '';
 
         if(!isset($data['default_language'])) {
-
-            // XTEC ************ MODIFICAT - Add support for Occitan language.
-            // 2025.11.13 @aginard
-            $locale_map = ['af'=>'af','am'=>'am','arq'=>'ar','ar'=>'ar','ary'=>'ar','az'=>'az','az_TR'=>'az','azb'=>'az','bel'=>'be','bg_BG'=>'bg','bn_BD'=>'bn','bs_BA'=>'bs','ca'=>'ca','oc'=>'oc','bal'=>'ca','ceb'=>'ceb','co'=>'co','cs_CZ'=>'cs','cy'=>'cy','da_DK'=>'da','de_DE'=>'de','de_CH'=>'de','gsw'=>'de','el'=>'el','en_AU'=>'en','en_CA'=>'en','en_NZ'=>'en','en_ZA'=>'en','en_GB'=>'en','eo'=>'eo','es_AR'=>'es','es_CL'=>'es','es_CO'=>'es','es_GT'=>'es','es_MX'=>'es','es_PE'=>'es','es_PR'=>'es','es_ES'=>'es','es_VE'=>'es','et'=>'et','eu'=>'eu','fa_IR'=>'fa','fa_AF'=>'fa','fi'=>'fi','fr_BE'=>'fr','fr_CA'=>'fr','fr_FR'=>'fr','fy'=>'fy','ga'=>'ga','gd'=>'gd','gl_ES'=>'gl','gu'=>'gu','hau'=>'ha','haw_US'=>'haw','hi_IN'=>'hi','hr'=>'hr','hat'=>'ht','hu_HU'=>'hu','hy'=>'hy','id_ID'=>'id','is_IS'=>'is','it_IT'=>'it','he_IL'=>'iw','ja'=>'ja','jv_ID'=>'jw','ka_GE'=>'ka','kk'=>'kk','km'=>'km','kn'=>'kn','ko_KR'=>'ko','ckb'=>'ku','kir'=>'ky','lb_LU'=>'lb','lo'=>'lo','lt_LT'=>'lt','lv'=>'lv','mg_MG'=>'mg','mri'=>'mi','mk_MK'=>'mk','ml_IN'=>'ml','mn'=>'mn','mr'=>'mr','ms_MY'=>'ms','my_MM'=>'my','ne_NP'=>'ne','nl_NL'=>'nl','nl_BE'=>'nl','nb_NO'=>'no','nn_NO'=>'no','pa_IN'=>'pa','pl_PL'=>'pl','ps'=>'ps','pt_BR'=>'pt','pt_PT'=>'pt','ro_RO'=>'ro','ru_RU'=>'ru','snd'=>'sd','si_LK'=>'si','sk_SK'=>'sk','sl_SI'=>'sl','so_SO'=>'so','sq'=>'sq','sr_RS'=>'sr','su_ID'=>'su','sv_SE'=>'sv','sw'=>'sw','ta_IN'=>'ta','ta_LK'=>'ta','te'=>'te','tg'=>'tg','th'=>'th','tr_TR'=>'tr','uk'=>'uk','ur'=>'ur','uz_UZ'=>'uz','vi'=>'vi','xho'=>'xh','yor'=>'yo','zh_CN'=>'zh-CN','zh_HK'=>'zh-CN','zh_TW'=>'zh-TW'];
-            // ************ ORIGINAL
-            /*
             $locale_map = array('af'=>'af','am'=>'am','arq'=>'ar','ar'=>'ar','ary'=>'ar','az'=>'az','az_TR'=>'az','azb'=>'az','bel'=>'be','bg_BG'=>'bg','bn_BD'=>'bn','bs_BA'=>'bs','ca'=>'ca','bal'=>'ca','ceb'=>'ceb','co'=>'co','cs_CZ'=>'cs','cy'=>'cy','da_DK'=>'da','de_DE'=>'de','de_CH'=>'de','gsw'=>'de','el'=>'el','en_AU'=>'en','en_CA'=>'en','en_NZ'=>'en','en_ZA'=>'en','en_GB'=>'en','eo'=>'eo','es_AR'=>'es','es_CL'=>'es','es_CO'=>'es','es_GT'=>'es','es_MX'=>'es','es_PE'=>'es','es_PR'=>'es','es_ES'=>'es','es_VE'=>'es','et'=>'et','eu'=>'eu','fa_IR'=>'fa','fa_AF'=>'fa','fi'=>'fi','fr_BE'=>'fr','fr_CA'=>'fr','fr_FR'=>'fr','fy'=>'fy','ga'=>'ga','gd'=>'gd','gl_ES'=>'gl','gu'=>'gu','hau'=>'ha','haw_US'=>'haw','hi_IN'=>'hi','hr'=>'hr','hat'=>'ht','hu_HU'=>'hu','hy'=>'hy','id_ID'=>'id','is_IS'=>'is','it_IT'=>'it','he_IL'=>'iw','ja'=>'ja','jv_ID'=>'jw','ka_GE'=>'ka','kk'=>'kk','km'=>'km','kn'=>'kn','ko_KR'=>'ko','ckb'=>'ku','kir'=>'ky','lb_LU'=>'lb','lo'=>'lo','lt_LT'=>'lt','lv'=>'lv','mg_MG'=>'mg','mri'=>'mi','mk_MK'=>'mk','ml_IN'=>'ml','mn'=>'mn','mr'=>'mr','ms_MY'=>'ms','my_MM'=>'my','ne_NP'=>'ne','nl_NL'=>'nl','nl_BE'=>'nl','nb_NO'=>'no','nn_NO'=>'no','pa_IN'=>'pa','pl_PL'=>'pl','ps'=>'ps','pt_BR'=>'pt','pt_PT'=>'pt','ro_RO'=>'ro','ru_RU'=>'ru','snd'=>'sd','si_LK'=>'si','sk_SK'=>'sk','sl_SI'=>'sl','so_SO'=>'so','sq'=>'sq','sr_RS'=>'sr','su_ID'=>'su','sv_SE'=>'sv','sw'=>'sw','ta_IN'=>'ta','ta_LK'=>'ta','te'=>'te','tg'=>'tg','th'=>'th','tr_TR'=>'tr','uk'=>'uk','ur'=>'ur','uz_UZ'=>'uz','vi'=>'vi','xho'=>'xh','yor'=>'yo','zh_CN'=>'zh-CN','zh_HK'=>'zh-CN','zh_TW'=>'zh-TW');
-            */
-            // ************ FI
-
             $locale = get_locale();
             $data['default_language'] = isset($locale_map[$locale]) ? $locale_map[$locale] : 'en';
         }
