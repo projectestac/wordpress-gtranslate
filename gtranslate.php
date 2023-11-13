@@ -1038,6 +1038,14 @@ EOT;
                             </select>
                         </td>
                     </tr>
+
+<?php
+// XTEC ************ AFEGIT - Hidden options and links to paid plans.
+// 2023.11.13 @aginard
+if (is_xtec_super_admin()) :
+// ************ FI
+?>
+
                     <tr>
                         <td class="option_name">* <?php _e('Sub-directory URL structure', 'gtranslate'); ?>:<br><code><small>http://example.com/<b>ru</b>/</small></code></td>
                         <td><input id="pro_version" name="pro_version" value="1" type="checkbox" onclick="if(jQuery('#pro_version').is(':checked') && jQuery('#enterprise_version').is(':checked'))jQuery('#enterprise_version').prop('checked', false);RefreshDoWidgetCode()" onchange="RefreshDoWidgetCode()"/> <a href="https://gtranslate.io/?xyz=998#pricing" target="_blank" title="If you already have a subscription, you can enable this." rel="noreferrer">* <?php _e('for paid plans only', 'gtranslate'); ?></a></td>
@@ -1066,6 +1074,14 @@ EOT;
                         <td class="option_name"><?php _e('Debug Email Translation', 'gtranslate'); ?>:</td>
                         <td><input id="email_translation_debug" name="email_translation_debug" value="1" type="checkbox"/></td>
                     </tr>
+
+<?php
+// XTEC ************ AFEGIT - Hidden options and links to paid plans.
+// 2023.11.13 @aginard
+endif;
+// ************ FI
+?>
+
                     <tr>
                         <td class="option_name"><?php _e('Native language names', 'gtranslate'); ?>:</td>
                         <td><input id="native_language_names" name="native_language_names" value="1" type="checkbox" onclick="RefreshDoWidgetCode()" onchange="RefreshDoWidgetCode()"/></td>
@@ -1201,6 +1217,13 @@ EOT;
             </div>
         </div>
 
+<?php
+// XTEC ************ AFEGIT - Hidden boxes in gtranslate admin page.
+// 2023.11.13 @aginard
+if (is_xtec_super_admin()) :
+// ************ FI
+?>
+
         <div id="poststuff">
             <div class="postbox">
                 <h3 id="settings"><?php _e('Custom CSS', 'gtranslate'); ?> <a href="#TB_inline?width=700&height=170&inlineId=common-customization-tips-description" title="<?php echo esc_attr(translate('Common customizations tips')); ?>" class="thickbox" style="text-decoration:none"><span class="dashicons dashicons-editor-help"></span></a></h3>
@@ -1213,6 +1236,13 @@ EOT;
                 </div>
             </div>
         </div>
+
+<?php
+// XTEC ************ AFEGIT - Hidden boxes in gtranslate admin page.
+// 2023.11.13 @aginard
+endif;
+// ************ FI
+?>
 
         <input type="hidden" name="switcher_text_color" id="switcher_text_color_hidden" value="<?php echo $switcher_text_color; ?>" />
         <input type="hidden" name="switcher_arrow_color" id="switcher_arrow_color_hidden" value="<?php echo $switcher_arrow_color; ?>" />
@@ -1242,7 +1272,21 @@ EOT;
 
         <p class="submit"><input type="submit" class="button-primary" name="save" value="<?php _e('Save Changes'); ?>" /></p>
 
+<?php
+// XTEC ************ AFEGIT - Hidden five stars link.
+// 2023.11.13 @aginard
+if (is_xtec_super_admin()) :
+// ************ FI
+?>
+
         <p style="margin-top:-10px;"><a target="_blank" href="https://wordpress.org/support/plugin/gtranslate/reviews/?filter=5" rel="noreferrer"><?php _e('Love GTranslate? Give us 5 stars on WordPress.org :)', 'gtranslate'); ?></a></p>
+
+<?php
+// XTEC ************ AFEGIT - Hidden five stars link.
+// 2023.11.13 @aginard
+endif;
+// ************ FI
+?>
 
         </div>
 
@@ -1343,6 +1387,13 @@ EOT;
                     </div>
                 </div>
             </div>
+
+<?php
+// XTEC ************ AFEGIT - Hidden boxes in gtranslate admin page.
+// 2023.11.13 @aginard
+if (is_xtec_super_admin()) :
+// ************ FI
+?>
 
             <div id="poststuff" class="alternative_flags_option">
                 <div class="postbox">
@@ -1448,6 +1499,14 @@ EOT;
                     </div>
                 </div>
             </div>
+
+<?php
+// XTEC ************ AFEGIT - Hidden boxes in gtranslate admin page.
+// 2023.11.13 @aginard
+endif;
+// ************ FI
+?>
+
         </div>
 
         <script><?php echo $script; ?></script>
@@ -1483,7 +1542,21 @@ EOT;
         .gt-icon-spin {animation:gt-icon-spin-animation 2s infinite linear;}
         </style>
 
+<?php
+// XTEC ************ AFEGIT - Hidden support button.
+// 2023.11.13 @aginard
+if (is_xtec_super_admin()) :
+// ************ FI
+?>
+
         <script>window.intercomSettings = {app_id: "r70azrgx", 'platform': 'wordpress', 'translate_from': '<?php echo $default_language; ?>', 'is_sub_directory': <?php echo (empty($pro_version) ? '0' : '1'); ?>, 'is_sub_domain': <?php echo (empty($enterprise_version) ? '0' : '1'); ?>};(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/r70azrgx';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
+
+<?php
+// XTEC ************ AFEGIT - Hidden support button.
+// 2023.11.13 @aginard
+endif;
+// ************ FI
+?>
 
         <?php
     }
