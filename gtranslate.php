@@ -1829,7 +1829,12 @@ class GTranslate_Notices {
         add_action('admin_init', array($this, 'admin_notice_temp_ignore'));
 
         // Adding notices
+        // XTEC ************ ESBORRAT - Hidden ad messages to all users (cannot be limited easily to xtecadmin).
+        // 2023.11.27 @aginard
+        /*
         add_action('admin_notices', array($this, 'gt_admin_notices'));
+        */
+        // ************ FI
     }
 
     // Checks to ensure notices aren't disabled and the user has the correct permissions.
