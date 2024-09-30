@@ -928,6 +928,14 @@ EOT;
                 <h3 id="settings"><?php esc_html_e('Widget options', 'gtranslate'); ?></h3>
                 <div class="inside">
                     <table style="width:100%;" cellpadding="4">
+
+<?php
+// XTEC ************ AFEGIT - Hidden options and links to paid plans to all users but xtecadmin.
+// 2023.11.13 @aginard
+if (is_xtec_super_admin()) :
+// ************ FI
+?>
+
                     <tr>
                         <td class="option_name"><?php esc_html_e('Widget look', 'gtranslate'); ?>:</td>
                         <td>
@@ -1063,14 +1071,6 @@ EOT;
                             </select>
                         </td>
                     </tr>
-
-<?php
-// XTEC ************ AFEGIT - Hidden options and links to paid plans.
-// 2023.11.13 @aginard
-if (is_xtec_super_admin()) :
-// ************ FI
-?>
-
                     <tr>
                         <td class="option_name">* <?php esc_html_e('Sub-directory URL structure', 'gtranslate'); ?>:<br><code><small>https://example.com/<b>es</b>/</small></code></td>
                         <td><input id="pro_version" name="pro_version" value="1" type="checkbox" onclick="if(jQuery('#pro_version').is(':checked') && jQuery('#enterprise_version').is(':checked'))jQuery('#enterprise_version').prop('checked', false);RefreshDoWidgetCode()" onchange="RefreshDoWidgetCode()"/> <a href="https://gtranslate.io/?xyz=998#pricing" target="_blank" title="<?php esc_attr_e('If you already have a subscription, you can enable this.', 'gtranslate'); ?>" rel="noreferrer">* <?php esc_html_e('for paid plans only', 'gtranslate'); ?></a></td>
@@ -1099,14 +1099,6 @@ if (is_xtec_super_admin()) :
                         <td class="option_name"><?php esc_html_e('Debug Email Translation', 'gtranslate'); ?>:</td>
                         <td><input id="email_translation_debug" name="email_translation_debug" value="1" type="checkbox"/></td>
                     </tr>
-
-<?php
-// XTEC ************ AFEGIT - Hidden options and links to paid plans.
-// 2023.11.13 @aginard
-endif;
-// ************ FI
-?>
-
                     <tr>
                         <td class="option_name"><?php esc_html_e('Native language names', 'gtranslate'); ?>:</td>
                         <td><input id="native_language_names" name="native_language_names" value="1" type="checkbox" onclick="RefreshDoWidgetCode()" onchange="RefreshDoWidgetCode()"/></td>
@@ -1201,6 +1193,31 @@ endif;
                         </select>
                         </td>
                     </tr>
+
+<?php
+// XTEC ************ AFEGIT - Hidden options and links to paid plans to all users but xtecadmin.
+// 2023.11.13 @aginard
+else :
+    // Set fixed values. The checkboxes that are not checked, are not sent to the server.
+?>
+
+    <input type="hidden" id="widget_look" name="widget_look" value="dropdown">
+    <input type="hidden" id="default_language" name="default_language" value="ca">
+    <input type="hidden" id="native_language_names" name="native_language_names" value="1">
+    <input type="hidden" id="select_language_label" name="select_language_label" value="Tradueix">
+    <input type="hidden" id="floating_language_selector" name="floating_language_selector" value="top_right">
+    <input type="hidden" id="wrapper_selector" name="wrapper_selector" value=".gtranslate_wrapper">
+    <input type="hidden" id="float_switcher_open_direction" name="float_switcher_open_direction" value="bottom">
+    <input type="hidden" id="switcher_open_direction" name="switcher_open_direction" value="bottom">
+    <input type="hidden" id="flag_size" name="flag_size" value="16">
+    <input type="hidden" id="flag_style" name="flag_style" value="3d">
+    <input type="hidden" id="globe_size" name="globe_size" value="20">
+
+<?php
+endif;
+// ************ FI
+?>
+
                     <tr id="flag_languages_option" style="display:none;">
                         <td class="option_name" colspan="2"><div><?php esc_html_e('Flag languages', 'gtranslate'); ?>: <a onclick="jQuery('.connectedSortable1 input').attr('checked', true);RefreshDoWidgetCode()" style="cursor:pointer;text-decoration:underline;"><?php esc_html_e('Check All', 'gtranslate'); ?></a> | <a onclick="jQuery('.connectedSortable1 input').attr('checked', false);RefreshDoWidgetCode()" style="cursor:pointer;text-decoration:underline;"><?php esc_html_e('Uncheck All', 'gtranslate'); ?></a> <span style="float:right;"><?php printf(esc_html__('%1$sHINT%2$s: To reorder the languages simply drag and drop them in the list below.', 'gtranslate'), '<b>', '</b>'); ?></span></div><br />
                         <div>
